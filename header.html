@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/b04da06128.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.bar {
+  background-color: #003E47;
+  height: 30px;
+  color: white;
+  padding-top: 5px;
+  text-align: right;
+  padding-right: 30px;
+}
+
+header {
+  background: #ffffff;
+  color: rgb(6, 2, 63);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: rgb(6, 2, 63);
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive: hide links and show menu icon on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+  }
+}
+
+    </style>
+
+    <script>
+        function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+
+    </script>
+
+</head>
+<body>
+    <div class="bar">
+            <i class="fas fa-envelope"></i> <span class="icon-text">hello@manzilmitr.com</span> &nbsp;&nbsp;
+            
+            <i class="fas fa-phone"></i> <span class="icon-text">+91 98107 52174</span>
+        </div>
+        <header>
+        <a href="doc.html"><img src="logo-min.png" width="auto" height="45px"></a>
+        
+    
+   <nav>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="nav-links">
+    <a href="#">Weekend Getaways</a>
+    <a href="#">Backpacking Trips</a>
+    <a href="#">Spiritual Tours</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
+  </div>
+</nav>
+  </header>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/b04da06128.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+     html, body {
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.full-banner {
+    width: 100vw;           /* forces full viewport width */
+    height: 100vh;          /* full screen height */
+    margin-left: calc(50% - 50vw); /* removes container limits */
+    margin-right: calc(50% - 50vw);
+    overflow: hidden;
+    position: relative;
+}
+
+.full-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.banner-text {
+    position: absolute;
+    bottom: 10%;         /* adjust text position */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+}
+
+.banner-text h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.banner-text p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.page-layout {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* Left = 2/3 width */
+.itinerary-section {
+    flex: 2;
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center horizontally */
+    gap: 20px; /* spacing between price box and form */
+    padding: 20px;
+}
+
+/* Price Box Styling */
+.price-box {
+    background: #e8f4fa; /* light, clean color */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.price-box h1 {
+    margin: 10px 0;
+    font-size: 2.2rem;
+    color: #0077a7;
+}
+
+.enquire-btn {
+    padding: 12px 20px;
+    background: #0077a7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.enquire-btn:hover {
+    background: #005f85;
+}
+
+/* Call Back Form Styling */
+.callback-form {
+    background: #f0f8ff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.callback-form h3 {
+    margin-bottom: 15px;
+    color: #0077a7;
+    font-size: 1.5rem;
+}
+
+.callback-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.callback-form input,
+.callback-form textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.callback-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.callback-form button {
+    padding: 12px 20px;
+    background: #0077a7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.callback-form button:hover {
+    background: #005f85;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .price-section {
+        width: 90%;
+        margin: auto;
+    }
+    .price-box,
+    .callback-form {
+        max-width: 100%;
+    }
+}
+
+
+
+    </style>
+    <script>
+
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+    fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+
+    </script>
+</head>
+<body>
+
+   <div id="header"></div>
+    <section class="itinerary-page" style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: auto; padding: 0px;">
+
+    <!-- Banner Image -->
+   <div class="full-banner" style="position: relative; text-align: center;">
+    <img src="Photo1.jpg" alt="Manali Banner" style="width: 100%; height: auto; display: block;">
+    
+    <div class="banner-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff;">
+        <h1 style="font-size: 48px; margin-bottom: 20px;">Manali Sissu Kasol</h1>
+        
+        <p style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 18px; margin-bottom: 20px;">
+            <i class="fa-solid fa-clock"></i> 2N | 3D
+        </p>
+        
+        <!-- Download Itinerary Button -->
+        <a href="itinerary.pdf" download
+           style="
+             display: inline-block;
+             padding: 12px 30px;
+             font-size: 18px;
+             font-weight: bold;
+             color: #fff;
+             background-color: #ff6b6b;
+             border-radius: 8px;
+             text-decoration: none;
+             transition: background-color 0.3s;
+           "
+           onmouseover="this.style.backgroundColor='#ff4c4c';"
+           onmouseout="this.style.backgroundColor='#ff6b6b';"
+        >
+            Download Itinerary
+        </a>
+    </div>
+</div>
+
+
+   
+
+    <div class="page-layout">
+
+    <!-- LEFT: ITINERARY (2/3 width) -->
+    <div class="itinerary-section">
+        <h1>Itinerary</h1>
+      <h2>Day 1: Arrival in Manali</h2>
+        <ul style="font-size: 18px; line-height: 1.8; color: #555; padding-left: 20px;">
+  <li>Arrive in Manali and check in to your hotel.</li>
+  <li>Explore the local market and Mall Road.</li>
+  <li>Enjoy riverside cafés and local delicacies.</li>
+  <li>Overnight stay in Manali.</li>
+</ul>
+
+        <h2>Day 2: Manali → Atal Tunnel → Sissu</h2>
+        <ul style="font-size: 18px; line-height: 1.8; color: #555; padding-left: 20px;">
+  <li>Arrive in Manali and check in to your hotel.</li>
+  <li>Explore the local market and Mall Road.</li>
+  <li>Enjoy riverside cafés and local delicacies.</li>
+  <li>Overnight stay in Manali.</li>
+</ul>
+
+        <h2>Day 3: Manali → Kasol</h2>
+        <ul style="font-size: 18px; line-height: 1.8; color: #555; padding-left: 20px;">
+  <li>Arrive in Manali and check in to your hotel.</li>
+  <li>Explore the local market and Mall Road.</li>
+  <li>Enjoy riverside cafés and local delicacies.</li>
+  <li>Overnight stay in Manali.</li>
+</ul>
+
+<h2>Inclusions</h2>
+<ul style="list-style:none; padding-left:0;">
+    <li><span style="color:green;">✔</span> Accommodation</li>
+    <li><span style="color:green;">✔</span> Transport during the trip</li>
+    <li><span style="color:green;">✔</span> Atal Tunnel transfer</li>
+    <li><span style="color:green;">✔</span> Breakfast & Dinner</li>
+    <li><span style="color:green;">✔</span> Trip coordinator</li>
+</ul>
+
+<h2 style="margin-top:30px;">Exclusions</h2>
+<ul style="list-style:none; padding-left:0;">
+    <li><span style="color:red;">✘</span> Lunch</li>
+    <li><span style="color:red;">✘</span> Personal expenses</li>
+    <li><span style="color:red;">✘</span> Entry tickets</li>
+    <li><span style="color:red;">✘</span> Anything not mentioned in inclusions</li>
+</ul>
+
+            </div>
+
+ <!-- Price & Callback Section -->
+<div class="price-section">
+
+  <!-- Price Box -->
+  <div class="price-box">
+      <h3>Starting From</h3>
+      <h1>₹4,999</h1>
+
+      <button class="enquire-btn">Enquire Now</button>
+  </div>
+
+  <!-- Call Back Form Below Price Box -->
+  <div class="callback-form">
+      <h3>Request a Call Back</h3>
+      <form>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <input type="email" name="email" placeholder="Email Address">
+          <textarea name="message" placeholder="Your Message (optional)"></textarea>
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+
+</div>
+
+
+
+
+
+</div>
+
+
+ 
+
+    <!-- Pricing Section -->
+    <section class="pricing" style="margin-top:40px;">
+        <h2>Pricing</h2>
+
+        <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+            <tr style="background:#f0f0f0;">
+                <th style="padding:10px; text-align:left;">Room Sharing</th>
+                <th style="padding:10px; text-align:left;">Price (per person)</th>
+            </tr>
+
+            <tr>
+                <td style="padding:10px; border-bottom:1px solid #ddd;">Double Sharing</td>
+                <td style="padding:10px; border-bottom:1px solid #ddd;">₹ ———</td>
+            </tr>
+
+            <tr>
+                <td style="padding:10px; border-bottom:1px solid #ddd;">Triple Sharing</td>
+                <td style="padding:10px; border-bottom:1px solid #ddd;">₹ ———</td>
+            </tr>
+
+            <tr>
+                <td style="padding:10px;">Quad Sharing</td>
+                <td style="padding:10px;">₹ ———</td>
+            </tr>
+        </table>
+    </section>
+
+</section>
+<div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="features.css">
+        <script src="https://kit.fontawesome.com/b04da06128.js" crossorigin="anonymous"></script>
+        <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// When user clicks a dot
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+// Auto-slide every 4 seconds
+setInterval(() => {
+  slideIndex++;
+  showSlides(slideIndex);
+}, 4000);
+
+function showSlides(n) {
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+
+  if (n > slides.length) slideIndex = 1;
+  if (n < 1) slideIndex = slides.length;
+
+  slides.forEach(slide => slide.style.display = "none");
+  dots.forEach(dot => dot.classList.remove("active"));
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+}
+
+
+function scrollReviews(direction) {
+  const slider = document.getElementById("reviewSlider");
+  slider.scrollLeft += direction * 300; // scrolls by 300px each arrow click
+}
+
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+
+</script>
+        <title>
+            Manzil Mitr
+        </title>
+    </head>
+    <body>
+        <div class="bar">
+            <i class="fas fa-envelope"></i> <span class="icon-text">hello@manzilmitr.com</span> &nbsp;&nbsp;
+            
+            <i class="fas fa-phone"></i> <span class="icon-text">+91 98107 52174</span>
+        </div>
+        <header>
+        <a href="doc.html"><img src="logo-min.png" width="auto" height="45px"></a>
+        
+    
+   <nav>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="nav-links">
+    <a href="#">Weekend Getaways</a>
+    <a href="#">Backpacking Trips</a>
+    <a href="#">Spiritual Tours</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
+  </div>
+</nav>
+  </header>
+
+    <section class="carousel">
+  <div class="carousel-container">
+    <div class="slide active">
+      <img src="Photo1.jpg" alt="Mountain View">
+    </div>
+    <div class="slide">
+      <img src="Photo2.jpg" alt="Beach Sunset">
+    </div>
+    <div class="slide">
+      <img src="Photo3.jpg" alt="Forest Adventure">
+    </div>
+    <div class="carousel-text">
+        <p>EMBARK</p>
+        <p>EXPLORE</p>
+        <p>EXPERIENCE</p>
+      </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</section>
+
+  <section class="hero">
+    <h2>Steal the Deal! </h2>
+     <div class="cards">
+      <div class="card">
+        <img src="Photo1.jpg" alt="Paris">
+        <div class="text-overlay"><i class="fa-solid fa-clock"></i><span>2N|3D</span></div>
+        <h3>Jaiselmer Longewala</h3>
+        <p>From ₹6999/-  </p>
+        <i class="fa-solid fa-location-dot"></i><span>Delhi - Delhi</span>
+      </div>
+
+      
+      <div class="card">
+        <img src="Photo1.jpg" alt="Paris">
+        <h3>Udaipur Kumbalgarh</h3>
+        <p>The city of lights and love.</p>
+      </div>
+
+      
+      <div class="card">
+        <img src="Photo1.jpg" alt="Paris">
+        <h3>Paris, France</h3>
+        <p>The city of lights and love.</p>
+      </div>
+     </div>
+  </section>
+
+  <section id="destinations" class="destinations">
+    <h2>Destinations We Cover</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="Photo1.jpg" alt="Paris">
+        <h3>Paris, France</h3>
+        <p>The city of lights and love.</p>
+      </div>
+      <div class="card">
+        <img src="Photo1.jpg" alt="Bali">
+        <h3>Bali, Indonesia</h3>
+        <p>Tropical paradise for your soul.</p>
+      </div>
+      <div class="card">
+        <img src="Photo1.jpg" alt="New York">
+        <h3>New York, USA</h3>
+        <p>The city that never sleeps.</p>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="reviews-wrapper">
+  <h2>Customer Reviews</h2>
+
+  <div class="arrow left" onclick="scrollReviews(-1)">&#10094;</div>
+
+  <div class="reviews-slider" id="reviewSlider">
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="name">John Doe</p>
+      <p class="text">Excellent service and great quality!</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="name">Sarah Smith</p>
+      <p class="text">Amazing experience! Friendly staff.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="name">Michael Lee</p>
+      <p class="text">Very satisfied with the service!</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="name">Emily Johnson</p>
+      <p class="text">Great quality! Will return again.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="name">David Wilson</p>
+      <p class="text">Top-notch service. Highly recommended!</p>
+    </div>
+
+  </div>
+
+  <div class="arrow right" onclick="scrollReviews(1)">&#10095;</div>
+
+</section>
+
+<section class="more-reviews-section">
+  <h3>See more reviews</h3>
+  <div class="review-links">
+    <a href="https://share.google/aPgZEJpdG796gSRTi" target="_blank" rel="noopener noreferrer">
+      <img src="google logo.png " alt="Google Reviews">
+    </a>
+    <a href="https://www.tripadvisor.in/Attraction_Review-g304551-d28140923" target="_blank" rel="noopener noreferrer">
+      <img src="tripadvisor logo.png" alt="tripadvisor"> 
+    </a>
+  </div>
+</section>
+
+
+
+  <section id="about-us" style="padding: 70px 20px; background: #ffffff; font-family: Arial, sans-serif;">
+    
+  <!-- Common Heading -->
+  <h2 style="font-size: 36px; margin-bottom: 40px; color:#222; text-align: center;">
+    Get to Know Us
+  </h2>
+
+  <div style="
+    max-width: 1100px; 
+    margin: auto; 
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px;
+  ">
+
+    <!-- Text Section (Left) -->
+    <div style="flex: 1 1 500px; min-width: 300px;">
+      <p style="font-size: 18px; line-height: 1.7; color:#555; text-align: justify;">
+        ManzilMitr is your friendly guide to discovering meaningful places, hidden gems, 
+        and inspiring destinations across India. We curate reliable travel insights, 
+        authentic reviews, and handpicked recommendations to make your journeys simpler 
+        and more memorable.
+      </p>
+
+      <p style="font-size: 18px; line-height: 1.7; margin-top: 15px; color:#555; text-align: justify;">
+        Whether you seek culture, spirituality, nature, or experiences off the beaten path,
+        ManzilMitr helps you find places that truly connect with your journey. Our mission 
+        is to make every trip meaningful, memorable, and easier to plan.
+      </p>
+    </div>
+
+    <!-- Image Section (Right) -->
+    <div style="flex: 1 1 450px; min-width: 300px; text-align: center;">
+      <img src="Photo1.jpg" alt="ManzilMitr About Us" 
+           style="width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    </div>
+
+  </div>
+</section>
+
+
+
+  <footer>
+    <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>All Tours</h3>
+      <ul>
+        <li><a href="#">Himachal Pradesh</a></li>
+        <li><a href="#">Uttarakhand</a></li>
+        <li><a href="#">Rajasthan</a></li>
+        <li><a href="#">Spiti Valley</a></li>
+        <li><a href="#">Leh Ladakh</a></li>
+        <li><a href="#">Meghalaya</a></li>
+        <li><a href="#">Kerala</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="Terms and Conditions.html">Terms & Conditions</a></li>
+        <li><a href="Privacy Policy.html">Privacy Policy</a></li>
+        <li><a href="Cancellation Policy.html">Cancellation Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contact Info</h3>
+      <ul>
+        <li><strong>📍</strong> A2-131, Sector 5, Rohini, New Delhi - 110085</li>
+        <li><strong>📞</strong> +91 98107 52174</li>
+        <li><strong>✉️</strong> hello@manzilmitr.com</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+    </br></br>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+      
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Manzil Mitr. All rights reserved.</p>
+  </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+    </body>
+</html>
